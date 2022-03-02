@@ -1,0 +1,72 @@
+<ion-content>
+  <app-header  title="Anuncios" backButtonModal="true"></app-header>
+
+
+  <!-- ------------------------------- Skeleton---------------------------------------- -->
+
+  <div *ngFor="let p of [1,1,1,1,1]">
+    <ion-card *ngIf="waiting">
+      <div>
+        <ion-skeleton-text animated style="width: 100%; height: 70px;"></ion-skeleton-text>
+      </div>
+      <ion-skeleton-text animated style="width: 80%; left: 10px;"></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 60%; left: 10px;"></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 40%; left: 10px;"></ion-skeleton-text>
+    </ion-card>
+  </div>
+
+
+  <div class="no-marketing ion-text-center" *ngIf="!waiting && marketing.length == 0">
+      <ion-icon class="ad" name="megaphone-outline"></ion-icon>
+    <div class="ad-text">No hay anuncios</div>
+  </div>
+
+
+  <!-- ------------------------------- Lista---------------------------------------- -->
+
+  <ion-grid fixed *ngIf="!waiting && marketing.length > 0">
+    <ion-row>
+      <ion-col size="12" *ngFor="let m of marketing">
+
+        <ion-card class="animate__animated animate__rotateInUpLeft">
+
+
+          <ion-buttons style="position: absolute; left: 85%; top: 10px;">
+            <ion-button color="warning" (click)="options(m)">
+              <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+
+            </ion-button>
+          </ion-buttons>
+
+
+
+
+          <div class="box">
+            <div class="title">
+              <p>{{m.name}}</p>
+            </div>
+            <div class="price">
+              <p>{{m.description}}</p>
+            </div>
+          </div>
+
+          <div class="square">
+            <img [src]="m.image" />
+          </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+  <!-- ------------------------------- Botón ---------------------------------------- -->
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="warning" (click)="addMarketing()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+
+</ion-content>

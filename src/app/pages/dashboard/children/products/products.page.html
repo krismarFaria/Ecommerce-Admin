@@ -1,0 +1,50 @@
+
+<ion-content >
+  <app-header  title="Productos"></app-header>
+
+   <!-- ------------------------------- Skeleton---------------------------------------- -->
+
+  <div *ngIf="waiting">
+    <ion-item *ngFor="let p of [1,1,1,1,1]">
+      <ion-label><ion-skeleton-text animated style="width: 50%"></ion-skeleton-text></ion-label>
+    </ion-item>
+  </div>
+  
+   <!-- -------------------------------Si no hay categorías---------------------------------------- -->
+
+  <div class="no-categories" *ngIf="!waiting && categories.length == 0">
+   <ion-icon class="ad" name="bag-handle-outline"></ion-icon>
+   <div class="ad-text">No hay categorías</div>
+  </div>
+  
+   <!-- ------------------------------- Si hay categorías ---------------------------------------- -->
+
+
+  <div style="padding: 10px; padding-top: 15px;"  *ngIf="!waiting && categories.length > 0">
+    <ion-item  *ngFor="let c of categories">
+      <ion-avatar routerLink="/dashboard/products/products-by-category/{{c.id}}/{{c.name}}" slot="start">
+        <img [src]="c.image" />
+      </ion-avatar>
+      <ion-label>{{c.name}} </ion-label>
+  
+      <ion-buttons slot="end">
+        <ion-button color="medium" (click)="options(c)">
+            <ion-icon name="ellipsis-vertical"></ion-icon>
+         
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </div>
+
+
+ 
+   <!-- ------------------------------- Fab ---------------------------------------- -->
+  
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button color="warning" (click)="addCategory()">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  
+ 
+</ion-content>

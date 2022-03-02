@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Ecommerce-Admin</string>
+    <string name="title_activity_main">Ecommerce-Admin</string>
+    <string name="package_name">com.ecommercea.app</string>
+    <string name="custom_url_scheme">com.ecommercea.app</string>
+</resources>

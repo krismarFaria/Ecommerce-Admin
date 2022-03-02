@@ -1,0 +1,44 @@
+<ion-content>
+  <app-header title="{{categoryName}}"></app-header>
+
+  
+<div style="padding-top: 20px;">
+<div *ngIf="waiting">
+  <ion-item *ngFor="let p of [1,1,1,1,1]">
+    <ion-label><ion-skeleton-text animated style="width: 50%"></ion-skeleton-text></ion-label>
+  </ion-item>
+</div>
+
+<div class="no-products" *ngIf="!waiting && products.length == 0">
+ <ion-icon style="font-size: 120px;" name="cart"></ion-icon>
+ <div>No hay productos</div>
+</div>
+
+
+<div *ngIf="!waiting && products.length > 0">
+  <ion-item *ngFor="let p of products">
+    <ion-avatar slot="start">
+      <img [src]="p.image" />
+    </ion-avatar>
+    <ion-label>{{p.name}} <div>{{p.price | currency: 'USD'}}</div></ion-label>
+
+    <ion-buttons slot="end">
+      <ion-button color="medium" (click)="options(p)">
+          <ion-icon name="ellipsis-vertical"></ion-icon>
+       
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
+</div>
+
+</div>
+
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button color="warning"(click)="addProducts()">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+
+</ion-content>

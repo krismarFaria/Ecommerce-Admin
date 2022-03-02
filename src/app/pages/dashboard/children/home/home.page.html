@@ -1,0 +1,51 @@
+<ion-content>
+    <app-header title="Inicio"></app-header>
+
+    <h1 class="ion-text-center">
+        Registro de movimientos
+    </h1>
+
+ 
+   <!-- ------------------------------- Card 1 ---------------------------------------- -->
+    <ion-grid>
+        <ion-row>
+            <ion-col size="12">
+                <ion-card class="ion-padding animate__animated animate__rotateInUpLeft">
+                    <p>Regitro de usuarios:</p>
+
+                    <ion-item>
+                        <ion-label>Usuarios nuevos:</ion-label>
+                        <div class="length">{{usersToday.length}}</div>
+                    </ion-item>
+
+
+                    <ion-item>
+                        <ion-label>Total de usuarios:</ion-label>
+                        <div class="length">{{users.length}}</div>
+                    </ion-item>
+                </ion-card>
+            </ion-col>
+
+ 
+   <!-- ------------------------------- Card 2 ---------------------------------------- -->
+            <ion-col size="12">
+                <ion-card class="ion-padding animate__animated animate__rotateInUpLeft" >
+                    <p>Registro de compras:</p>
+
+                    <ion-item>
+                        <ion-label>Compras actuales:</ion-label>
+                        <div class="length">{{purchasesToday.length}}</div>
+                    </ion-item>
+
+
+                    <ion-item>
+                        <ion-label>Total de compras:</ion-label>
+                        <div class="length">{{purchases.length}}</div>
+                    </ion-item>
+                </ion-card>
+            </ion-col>
+
+        </ion-row>
+    </ion-grid>
+
+</ion-content>

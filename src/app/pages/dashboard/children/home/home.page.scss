@@ -1,0 +1,26 @@
+ion-card{
+   height: 250px;
+    border-radius: 10px;
+    box-shadow: 4px 9px 25px 1px rgba(0,0,0,0.12);
+}
+ion-item{
+    padding: 10px;
+}
+
+h1{
+    font-size: 18px;
+    padding: 5px;
+    font-weight: bold;
+    color: var(--ion-color-secondary);
+}
+
+p{
+    font-weight: bold;
+    color: var(--ion-color-secondary);
+}
+
+.length{
+    color: var(--ion-color-warning);
+    font-size: 50px;
+   
+}

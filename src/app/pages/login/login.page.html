@@ -1,0 +1,72 @@
+<ion-content  class="animate__animated animate__bounceInLeft">
+
+  <!-- ------------------------------- Título ---------------------------------------- -->
+  <p class="ion-text-center" style="font-family: 'Abril Fatface', cursive;">Biscotti
+    <span><ion-icon name="bag-handle"></ion-icon></span></p>
+  <div class="login-section shadow ion-padding">
+
+    <!-- ------------------------------- Texto ---------------------------------------- -->
+    <div class="heading ion-padding">
+      <h1>Bienvenido!</h1>
+      <p>Inicia sesión para continuar!</p>
+    </div>
+
+    <!-- ------------------------------- Formulario ---------------------------------------- -->
+    <form [formGroup]="form" (ngSubmit)="Submit()">
+
+       
+   <!-- ------------------------------- Email ---------------------------------------- -->
+      <div class="login-form ion-padding">
+        <div class="form-input">
+          <ion-icon name="mail-outline">
+          </ion-icon>
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input type="text" required formControlName="email"></ion-input>
+          </ion-item>
+        </div>
+
+        <div style="position: relative; bottom: 8px;" *ngIf="(email.dirty ||
+          email.touched) && email.errors">
+          <div style="border-radius: 20px; font-size: 13px;padding: 0;
+            padding-left: 20px;" class="alert alert-danger">
+            <span *ngIf="email.errors?.required">El email es requerido</span>
+            <span *ngIf="email.errors?.email">Inserta un email válido</span>
+          </div>
+        </div>
+
+ 
+   <!-- ------------------------------- Contraseña ---------------------------------------- -->
+
+        <div class="form-input">
+          <ion-icon name="lock-closed-outline">
+          </ion-icon>
+          <ion-item>
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input type="password" required formControlName="password"></ion-input>
+          </ion-item>
+        </div>
+      </div>
+
+
+      <div style="position: relative; bottom: 15px;" *ngIf="(password.dirty ||
+        password.touched) && password.errors">
+        <div style="border-radius: 20px; font-size: 13px;padding: 0;
+          padding-left: 35px;" class="alert alert-danger">
+          <span *ngIf="password.errors?.required">La contraseña es requerida</span>
+        </div>
+      </div>
+
+ 
+   <!-- ------------------------------- Botón ---------------------------------------- -->
+      <div class="ion-text-center btn">
+        <button>
+          Iniciar Sesión
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+
+</ion-content>

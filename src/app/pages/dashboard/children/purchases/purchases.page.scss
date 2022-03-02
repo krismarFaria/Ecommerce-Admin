@@ -1,0 +1,51 @@
+ion-card{
+    height: 100px;
+
+}
+
+ion-icon{
+  font-size: 120px; 
+  padding-top: 100px;
+  color: var(--ion-color-medium);
+}
+.square{
+    width: 100%;
+    height: 80px;
+    background: transparent;
+    overflow: hidden;
+    
+    
+  }
+  
+  .square img{
+    width: 100%;
+    height: auto;
+    
+  }
+  @supports(object-fit: cover){
+      .square img{
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+      }
+  }
+
+  .text{
+    color: var(--ion-color-medium);
+  }
+
+  
+  input:focus{
+    outline: none;
+}
+input{
+  position: relative;
+  top: 10px;
+  width: 85%;
+  height: 35px;
+  padding-left: 20px;
+  padding-right: 25px;
+  border-radius: 20px;
+  background-color: var(--ion-color-medium-tint);
+  border: 0px solid;
+}

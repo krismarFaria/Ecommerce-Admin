@@ -1,0 +1,18 @@
+<ion-toolbar >
+
+
+  <ion-buttons slot="start">
+    <ion-back-button *ngIf="backButton" defaultHref="/"></ion-back-button>
+    <ion-button *ngIf="backButtonModal" (click)="close()" shape="round">
+      <ion-icon color="light" style="font-size: 25px;" name="arrow-back"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+
+  
+  <ion-title class="ion-text-center">{{title}}  </ion-title>
+
+
+ </ion-toolbar>
+ <div class="inverted-border-radius">
+   
+   </div>

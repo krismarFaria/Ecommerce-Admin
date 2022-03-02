@@ -1,0 +1,74 @@
+
+<ion-content>
+<app-header  title="Ventas"></app-header>
+ 
+  
+  <div class="ion-text-center"  style="padding: 10px;">
+   <input type="date" [value]="currentDate"  (change)="formatDate($event)"/>
+ </div>
+   <!-- ------------------------------- Si hay ventas ---------------------------------------- -->
+   <div style="padding: 20px;">
+   
+   
+    <div  *ngIf="!waiting && purchases.length > 0">
+   <ion-card class="animate__animated animate__lightSpeedInRight" *ngFor="let p of purchases"  (click)="purchaseDetail(p)">
+     <ion-grid fixed>
+       <ion-row>
+         <ion-col size="4">
+           <div class="square">
+             <img src="{{p.image}}" alt="">
+           </div>
+         </ion-col>
+         <ion-col style="padding-top: 20px;" size="6">
+          <div><strong>Fecha:</strong>{{p.date | date: 'dd/MM/yy'}}</div> 
+          <div><strong>Productos:</strong>{{p.products.length}}</div>
+          <div><strong>Total:</strong>{{p.total | currency: 'USD'}}</div>
+         </ion-col>
+         <ion-col style="padding-top: 20px; text-align: end; padding-top: 55px;" size="2">
+             <ion-icon color="primary" style="font-size: 27px;" name="list-circle-outline"></ion-icon>
+           </ion-col>
+       </ion-row>
+     </ion-grid>
+   </ion-card>
+  
+   
+
+      
+   </div> 
+  </div>
+ 
+   <!-- ------------------------------- Si no hay venta ---------------------------------------- -->
+
+<div *ngIf="waiting">
+       <ion-card *ngFor="let p of [1,1,1,1,1,1,1,1,1,1,1,1]">
+         <ion-grid fixed>
+           <ion-row>
+             <ion-col size="4">
+               <div class="square">
+                 <ion-skeleton-text animated style="width: 100%; height: 100%;"></ion-skeleton-text>
+               </div>
+             </ion-col>
+             <ion-col style="padding-top: 15px;" size="6">
+               <div style="padding-bottom: 5px;">
+                   <ion-skeleton-text animated style="width: 70%;"></ion-skeleton-text>
+               </div>
+               <div style="padding-bottom: 5px;">
+                   <ion-skeleton-text animated style="width: 70%;"></ion-skeleton-text>
+               </div>
+               <div style="padding-bottom: 5px;">
+                   <ion-skeleton-text animated style="width: 70%;"></ion-skeleton-text>
+               </div>
+                
+             </ion-col>
+           </ion-row>
+         </ion-grid>
+       </ion-card>
+       </div>
+       
+       <div class="ion-text-center"  *ngIf="!waiting && purchases.length == 0">
+        <ion-icon  name="cart"></ion-icon>
+        <div class="text" >No hay ventas</div>
+       </div>
+       
+
+</ion-content>

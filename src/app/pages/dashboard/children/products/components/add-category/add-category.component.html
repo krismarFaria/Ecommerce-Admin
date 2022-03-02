@@ -1,0 +1,67 @@
+<ion-content>
+  <app-header-modal title="Agregar categoría" backButtonModal="true"></app-header-modal>
+  <ion-grid>
+    <ion-row>
+      <ion-card class="animate__animated animate__rotateInUpLeft">
+        <ion-col size="12">
+
+          <!-- ------------------------------- Imagen ---------------------------------------- -->
+          <ion-icon class="icon" *ngIf="!imgLoaded && !image.value"
+            style="font-size: 120px;"
+            name="image-outline" color="medium">
+          </ion-icon>
+
+          <ion-avatar *ngIf="image.value" style="margin: 0 auto; width:
+            120px;height:
+            120px;padding-bottom: 5px;">
+            <img [src]="image.value" />
+          </ion-avatar>
+
+          <div class="custom-input-file">
+            <input type="file" (change)="chooseImage($event)"
+              class="input-file">
+            Seleccionar Imagen
+          </div>
+
+
+        </ion-col>
+
+        <!-- ------------------------------- Formulario ---------------------------------------- -->
+        <ion-col size="12">
+          <form [formGroup]="form" (ngSubmit)="addCategory()">
+            <!-- ------------------------------- Nombre del producto ---------------------------------------- -->
+            <ion-item>
+              <ion-label position="floating">Name:</ion-label>
+              <ion-input type="text" required formControlName="name"></ion-input>
+            </ion-item>
+
+
+            <div style="padding-top: 10px; padding-left: 30px; padding-right:
+              30px;" *ngIf="(name.touched) && name.errors">
+              <div style="border-radius: 20px; font-size: 13px;padding: 0;
+                padding-left: 10px;" class="alert alert-danger">
+                <span *ngIf="name.errors?.required">Ingresa el nombre del
+                  producto</span>
+
+              </div>
+            </div>
+
+            <!-- ------------------------------- Botón ---------------------------------------- -->
+            <div  style="padding: 20px;">
+              <button class="ion-text-center button-btn" block
+                color="warning" type="submit">
+                Guardar
+              </button>
+            </div>
+
+
+          </form>
+        </ion-col>
+
+      </ion-card>
+    </ion-row>
+  </ion-grid>
+
+
+
+</ion-content>

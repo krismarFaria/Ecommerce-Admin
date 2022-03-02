@@ -1,0 +1,52 @@
+<ion-content>
+  <app-header title="Usuarios"></app-header>
+
+  <div style="font-weight: bold; color: var(--ion-color-primary); position:
+    relative; top: 20px; padding-left: 15px;">Usuarios registrados:</div>
+
+
+  <!-- ------------------------------- Si no hay usuarios ---------------------------------------- -->
+  <div *ngIf="waiting">
+    <ion-item *ngFor="let p of [1,1,1,1,1]">
+      <ion-label><ion-skeleton-text animated style="width: 50%"></ion-skeleton-text></ion-label>
+    </ion-item>
+  </div>
+
+  <div class="no-users" *ngIf="!waiting && users.length == 0">
+    <ion-icon style="font-size: 120px; position: relative; left: 35%;
+      padding-top: 30%;color: var(--ion-color-medium);" name="cart"></ion-icon>
+    <div style="position: relative;left: 35%; color: var(--ion-color-medium);">No
+      hay usuarios</div>
+  </div>
+
+
+
+
+  <!-- ------------------------------- Items ---------------------------------------- -->
+
+  <ion-item style="position: relative; top: 25px; padding-right: 15px;"
+    *ngFor="let u of users">
+
+
+  <div class="ion-text-center icon">
+    <ion-icon *ngIf="!u.image" style="font-size: 50px;"
+     name="person-circle-outline" color="medium"></ion-icon> 
+    </div>
+
+    <ion-avatar *ngIf="u.image">
+      <img [src]="u.image" />
+    </ion-avatar>
+
+    <ion-label>
+
+      <div style="font-weight: bold; position: relative; left: 15px; color:
+        var(--ion-color-primary);">{{u.username}}</div>
+      <div style="position: relative; left: 15px;color:
+        var(--ion-color-medium);">{{u.email}}</div>
+    </ion-label>
+
+
+  </ion-item>
+
+
+</ion-content>

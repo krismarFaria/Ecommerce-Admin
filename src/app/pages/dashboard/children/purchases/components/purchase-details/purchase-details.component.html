@@ -1,0 +1,35 @@
+<ion-content>
+
+    <app-header-modal backButtonModal="true" title="Purchase Details"></app-header-modal>
+  
+    <ion-item lines="none">
+      <ion-label >
+        <div color="medium" style="font-weight: bold; font-size: 15px;"> Date:</div> 
+        <div>{{p.date | date: 'short'}}</div>
+      </ion-label>
+    </ion-item>
+  
+    <ion-item  *ngFor="let i of p.products" >
+  
+      <ion-avatar slot="start">
+      <img [src]="i.image" />
+    </ion-avatar> 
+  
+      <ion-label >
+        <div color="secondary" style="font-weight: bold; ">{{i.name}}</div>
+        <div style="font-size: 13px; color: gray;"> {{i.price | currency:"USD"}} x {{i.quantity}} </div>
+      </ion-label>
+    </ion-item>
+  
+  
+  
+  
+  
+  </ion-content>
+  
+  <ion-footer>
+    <ion-item>
+      <ion-label>Total</ion-label>
+      <span slot="end">{{p.total | currency:"USD"}}</span>
+    </ion-item>
+  </ion-footer>
