@@ -2,6 +2,14 @@
     color: var(--ion-color-warning);
  }
 
+ .title{
+   color: var(--ion-color-light);
+ }
+
+ ion-icon{
+    color: var(--ion-color-light);
+ }
+
  ion-menu{
     --width: 210px;
     --min-width: 210px;
@@ -9,6 +17,20 @@
  }
  
  ion-split-pane{
+  
     --side-min-width: 210px;
     --side-width: 210px;
+ }
+
+ ion-content{
+   --background: linear-gradient(to right, #023e8a, #0077b6);  
+ }
+
+ ion-item{
+   --background: linear-gradient(to right, #023e8a, #0077b6);  
+ }
+
+ ion-list{
+
+   background: linear-gradient(to right, #023e8a, #0077b6); 
  }

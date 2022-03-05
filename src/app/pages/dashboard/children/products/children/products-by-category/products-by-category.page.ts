@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ActionSheetController, ModalController } from '@ionic/angular';
 import { FirebaseService } from 'src/app/services/firebase.service';
@@ -39,7 +39,7 @@ products = [];
   
   }
 
-
+  
   getProducts(){
     this.waiting = true;
     this.firebaseService.getColletionConditional('products', ref => ref.where('categoryId', '==', this.categoryId)).subscribe(data => {

@@ -26,14 +26,16 @@ const routes: Routes = [
     {
       path: 'purchases',
       loadChildren: () => import('./children/purchases/purchases.module').then( m => m.PurchasesPageModule)
-    }
+    } ,
+  
   ]
   },
   {
     path: '',
     redirectTo: 'dashboard/home',
     pathMatch: 'full'
-  },   
+  },  
+  
  
 ];
 

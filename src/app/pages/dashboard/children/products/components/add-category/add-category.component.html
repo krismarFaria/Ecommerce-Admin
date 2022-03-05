@@ -31,7 +31,7 @@
           <form [formGroup]="form" (ngSubmit)="addCategory()">
             <!-- ------------------------------- Nombre del producto ---------------------------------------- -->
             <ion-item>
-              <ion-label position="floating">Name:</ion-label>
+              <ion-label position="floating">Nombre de la categoría:</ion-label>
               <ion-input type="text" required formControlName="name"></ion-input>
             </ion-item>
 
@@ -40,8 +40,7 @@
               30px;" *ngIf="(name.touched) && name.errors">
               <div style="border-radius: 20px; font-size: 13px;padding: 0;
                 padding-left: 10px;" class="alert alert-danger">
-                <span *ngIf="name.errors?.required">Ingresa el nombre del
-                  producto</span>
+                <span *ngIf="name.errors?.required">Ingresa el nombre de la categoría</span>
 
               </div>
             </div>

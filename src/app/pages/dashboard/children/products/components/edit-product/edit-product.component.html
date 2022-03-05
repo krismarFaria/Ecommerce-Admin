@@ -33,7 +33,7 @@
 
 <!--------------------------------- Nombre del producto ---------------------------------------- -->
                   <ion-item>
-                      <ion-label position="floating">Name:</ion-label>
+                      <ion-label position="floating">Nombre:</ion-label>
                       <ion-input type="text" required formControlName="name"></ion-input>
                   </ion-item>
     
@@ -48,7 +48,7 @@
     <!-- ------------------------------- Precio del producto ---------------------------------------- -->
     
                   <ion-item>
-                      <ion-label position="floating">Price:</ion-label>
+                      <ion-label position="floating">Precio:</ion-label>
                       <ion-input type="tel" required formControlName="price"></ion-input>
                   </ion-item>
     
@@ -90,7 +90,7 @@
 
 <div style="padding-top: 10px;" *ngIf="(description.touched) && description.errors">
     <div style="border-radius: 20px; font-size: 13px;padding: 0; padding-left: 10px;" class="alert alert-danger">
-      <span *ngIf="description.errors?.required">Ingresa la descripcion del producto</span>
+      <span *ngIf="description.errors?.required">Ingresa la descripción del producto</span>
      
     </div>
   </div>

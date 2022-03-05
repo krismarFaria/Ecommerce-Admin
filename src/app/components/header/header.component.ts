@@ -7,16 +7,16 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  @Input() backButton;
-  @Input() backButtonModal; 
-  @Input() title;
   
+  @Input() title;
+   @Input() backButton;
+  @Input() backButtonModal;
   constructor(private modalController: ModalController) { }
 
+ 
   ngOnInit() {}
 
- close(){
+  close(){
     this.modalController.dismiss();
   }
-  
 }

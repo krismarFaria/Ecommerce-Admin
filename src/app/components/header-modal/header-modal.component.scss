@@ -1,10 +1,11 @@
+
 ion-toolbar{
   color: white;
     --background: linear-gradient(to right, #023e8a, #0077b6);    
 }
   .inverted-border-radius {
     position: relative;
-    height:30px;
+    height: 5px;
     width: 100%;
     background: linear-gradient(to right, #023e8a, #0077b6);       
     border-radius: 0px 0px 25px 0;
@@ -21,4 +22,14 @@ ion-toolbar{
     border-top-left-radius: 25px;
     box-shadow: 0 -25px 0 0 var(--ion-color-primary);
   
+  }
+
+  ion-title{
+    font-size: 15px;
+    position: relative;
+    top: -30px;
+  }
+
+  p{
+    font-size: 25px;
   }

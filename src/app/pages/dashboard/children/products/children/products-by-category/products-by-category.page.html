@@ -1,7 +1,7 @@
-<ion-content>
-  <app-header title="{{categoryName}}"></app-header>
 
-  
+<ion-content>
+  <app-header title="{{categoryName}}"></app-header> 
+
 <div style="padding-top: 20px;">
 <div *ngIf="waiting">
   <ion-item *ngFor="let p of [1,1,1,1,1]">
@@ -10,7 +10,7 @@
 </div>
 
 <div class="no-products" *ngIf="!waiting && products.length == 0">
- <ion-icon style="font-size: 120px;" name="cart"></ion-icon>
+ <ion-icon style="font-size: 120px;" name="bag"></ion-icon>
  <div>No hay productos</div>
 </div>
 
